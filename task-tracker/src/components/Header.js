@@ -1,20 +1,29 @@
-//Importing react used to be required for every component.
-// It's actually no longer required. :)
+import PropTypes from 'prop-types'
+import Button from './Button'
 
-//By adding in the {}, we destructure the object which was passed in, so we're now able to directly use the key, compared to before when we called the object then the key..(props.name)
-const Header = ({ name }) => {
-
+const Header = ({ title }) => {
   return (
-    <div>
-      <h1>Hey! {name}, did you know about this?</h1>
-    </div>
+    <header>
+      <h1>{title}</h1>
+      <Button />
+    </header>
   )
 }
 
 Header.defaultProps = {
-  name: 'Bot',
+  title: 'Bot',
   actions: 'Stand',
   emotion: 'Robot'
 }
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired
+}
+
+// CSS in JS
+// const headingStyle = {
+// color: 'red',
+// backgroundColor: 'black'
+// }
 
 export default Header
