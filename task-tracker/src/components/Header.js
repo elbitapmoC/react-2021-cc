@@ -5,15 +5,13 @@ const Header = ({ title }) => {
   return (
     <header>
       <h1>{title}</h1>
-      <Button />
+      <Button color='honeydew' text='' />
     </header>
   )
 }
 
 Header.defaultProps = {
-  title: 'Bot',
-  actions: 'Stand',
-  emotion: 'Robot'
+  title: 'Bot'
 }
 
 Header.propTypes = {
